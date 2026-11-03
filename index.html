@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coders GUI - HTML to Desktop App</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(15, 23, 42, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav h1 {
+            font-size: 24px;
+            color: #38bdf8;
+            font-weight: 800;
+        }
+
+        .btn {
+            background-color: #38bdf8;
+            color: #0f172a;
+            padding: 10px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0ea5e9;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 60px 20px;
+            background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #f8fafc;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* Terminal / Quick Start Section */
+        .quick-start {
+            padding: 0 20px 60px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .terminal {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 700px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid #333;
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            background-color: #2d2d2d;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .dot.red { background-color: #ff5f56; }
+        .dot.yellow { background-color: #ffbd2e; }
+        .dot.green { background-color: #27c93f; }
+
+        .terminal-title {
+            margin-left: 10px;
+            font-size: 13px;
+            color: #888;
+            font-family: monospace;
+        }
+
+        .terminal-body {
+            padding: 20px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 15px;
+            color: #d4d4d4;
+        }
+
+        .terminal-line {
+            margin-bottom: 10px;
+            display: flex;
+        }
+
+        .prompt {
+            color: #38bdf8;
+            margin-right: 10px;
+            user-select: none;
+        }
+
+        .command {
+            color: #a78bfa;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 50px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            background-color: #0b1120;
+        }
+
+        .feature-card {
+            background-color: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            width: 300px;
+            text-align: center;
+            border: 1px solid #334155;
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: #38bdf8;
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #38bdf8;
+        }
+
+        .feature-card p {
+            color: #94a3b8;
+            font-size: 16px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #0f172a;
+            color: #64748b;
+            border-top: 1px solid #1e293b;
+        }
+
+        footer strong {
+            color: #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <h1>Coders GUI</h1>
+        <a href="#" class="btn">Download</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Turn Any HTML File into a Desktop App.</h2>
+        <p>No complex frameworks. No overwhelming config. Just your HTML, CSS, and JS running natively on Windows, Mac, and Linux.</p>
+        <a href="#" class="btn">Get Started</a>
+    </section>
+
+    <!-- NEW: Quick Start / Command Line Section -->
+    <section class="quick-start">
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+                <span class="terminal-title">Command Prompt</span>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-line">
+                    <span class="prompt">C:\Users\You&gt;</span>
+                    <span class="command">npm install -g coders-gui</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="prompt">C:\Users\You&gt;</span>
+                    <span class="command">npx coders-gui</span>
+                </div>
+                <div class="terminal-line" style="color: #27c93f; margin-top: 15px;">
+                    ✔ App launched successfully!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature-card">
+            <h3>⚡ Lightning Fast</h3>
+            <p>Powered by Electron. Launch your web projects as native desktop windows in milliseconds.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🛠️ Zero Config</h3>
+            <p>Just select your HTML file and hit run. No package managers, no webpack, no headaches.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🌍 Cross-Platform</h3>
+            <p>Build once, run anywhere. Your app works perfectly on Win11, macOS, and Linux.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Credit: <strong>Deepseek</strong> & <strong>VictorNewb Inc.</strong></p>
+        <p>Version: 1.9-beta</p>
+    </footer>
+
+</body>
+</html>
